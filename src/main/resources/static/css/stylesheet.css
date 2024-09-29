@@ -1,0 +1,41 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background: #101114;
+  --text-color: #F9F9F9;
+  --font-size-base: 16px;
+  --font-family-base: 'Arial', sans-serif;
+
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 32px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Grundlegende Stile für html und body */
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16pt; /* 1rem = 16px */
+  color: var(--text-color);
+}
+
+body {
+
+  background-color: var(--background-color);
+  min-height: 100vh;
+  padding: 10px;
+  align-items:center;
+  display:flex;
+  flex-direction:column;
+}
+h1 {
+
+  color: blue;
+
+  margin-right: 30px;
+
+}
