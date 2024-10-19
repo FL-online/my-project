@@ -9,7 +9,7 @@
 <body>
 
 <h1>Todo-Liste</h1>
-
+<!--<p th:text="${#dates.format(task.dueDate, 'dd-MM-yyyy HH:mm')}">-->
 
 
     <div class="wrapper">
@@ -29,7 +29,7 @@
             <tr th:each="task : ${taskList}">
                 <td th:text="${task.title}">Title</td>
                 <td th:text="${task.description}">Description</td>
-                <td th:text="${task.dueDate}">Due Date</td>
+                <td th:text="${#temporals.format(task.dueDate, 'dd.MM.yyyy')}">Due Date</td>
                 <td th:text="${task.completed ? 'Yes' : 'No'}">Completed</td>
 
                 <!--<td>
@@ -52,7 +52,7 @@
         </table>
 
     </div>
-    <!-- Thymeleaf-Variable in JavaScript verfügbar machen -->
+
 
 </body>
 </html>

@@ -3,16 +3,29 @@
 <head>
   <title>New Task</title>
   <link rel="stylesheet" href="../static/css/styles.css">
+  <script src="../static/js/app.js" defer></script>
+
 
 </head>
 <body>
   <h1>Add New Task</h1>
-  <form action="#" th:action="@{/saveTask}" th:object="${task}" method="post">
+  <form action="#" th:action="@{/saveTask}" th:object="${task}" method="post" >
     <label>Title:</label><input type="text" th:field="*{title}" /><br/>
     <label>Description:</label><input type="text" th:field="*{description}" /><br/>
-    <label>Due Date:</label><input type="date" th:field="*{dueDate}" /><br/>
+    <label>Due Date:</label><input type="date"  th:field="*{dueDate}" /><br/>
+    <!--<input type="hidden" id="formatted-date-input" name="formattedDate" />-->
     <label>Completed:</label><input type="checkbox" th:field="*{completed}" /><br/>
     <button type="submit">Save</button>
   </form>
+ <!--
+<script>
+  /*function formatDateBeforeSubmit() {
+  alert("Achtung!");
+
+
+  }
+
+  </script>-->
+  <!--onclick=formatDateBeforeSubmit()-->
 </body>
 </html>

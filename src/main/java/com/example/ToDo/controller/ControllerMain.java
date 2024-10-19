@@ -38,6 +38,7 @@ public class ControllerMain {
     @PostMapping("/saveTask")
     public String saveTask(Task task) {
         taskRepository.save(task);
+        System.out.println(task);
         return "redirect:/";
     }
 
