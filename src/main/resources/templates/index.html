@@ -13,7 +13,7 @@
 
 
     <div class="wrapper">
-        <a href="/showNewTaskForm">Add New Task</a>
+
        <!-- <table border="1">-->
         <table>
             <thead>
@@ -21,8 +21,9 @@
                 <th>Title</th>
                 <th>Description</th>
                 <th>Due Date</th>
-                <th>Completed</th>
+                <th>Status</th>
                 <th>Actions</th>
+
             </tr>
             </thead>
             <tbody>
@@ -30,8 +31,20 @@
                 <td th:text="${task.title}">Title</td>
                 <td th:text="${task.description}">Description</td>
                 <td th:text="${#temporals.format(task.dueDate, 'dd.MM.yyyy')}">Due Date</td>
-                <td th:text="${task.completed ? 'Yes' : 'No'}">Completed</td>
-
+               <!-- <td th:text="${task.completed ? 'Yes' : 'No'}">Completed</td>-->
+                <td><p th:if="${task.completed}">
+                    <a th:href="@{/showFormForUpdate/{id}(id=${task.id})}">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text-color)"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+                    </a>
+                </p>
+                    </td>
+               <!--<td> <form action="/" method="post" id="checkboxForm"> <label>
+                   <input type="hidden" name="id" th:value="${task.id}"/>
+                   <input type="hidden" name="completed" value="false"/>
+                   <input type="checkbox" th:checked="${task.completed}" name="completed" onchange="document.getElementById('checkboxForm').submit();"/>
+                </label>
+                </form>
+               </td>-->
                 <!--<td>
 
                     <input type="checkbox" id=${task.id}>
@@ -40,17 +53,16 @@
                     </label>
                 </td>-->
                 <td>
-                    <a th:href="@{/showFormForUpdate/{id}(id=${task.id})}">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--secondary-color)"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg>
-                    </a>
-                    <a th:href="@{/deleteTask/{id}(id=${task.id})}">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--secondary-color)"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
-                    </a>
+                    <div id="actions"><a th:href="@{/showFormForUpdate/{id}(id=${task.id})}">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text-color)"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg>
+                   </a><a th:href="@{/deleteTask/{id}(id=${task.id})}">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text-color)"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+                    </a></div>
                 </td>
             </tr>
             </tbody>
         </table>
-
+        <a href="/showNewTaskForm" class="navi">Add New Task</a>
     </div>
 
 

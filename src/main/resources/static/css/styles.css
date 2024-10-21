@@ -94,7 +94,51 @@ th, td {
   white-space: normal; /* Zeilenumbruch ermöglichen */
   overflow: hidden; /* Verhindert das Überlaufen */
 }
+div{
+    display: flex;
+}
 
+a{
+display: block;
+height: 100%;
+ text-align: center;
+ align-content: center;
+}
 
+#actions{
+     /*text-align: center;
+     align-content: center;*/
+     padding-left:15px;
+}
 
+.navi {
+  flex: 1;
+  text-decoration: none;
+  outline-color: transparent;
+  text-align: center;
+  line-height: 3;
+  color: black;
+}
+
+.navi:link,
+.navi:visited,
+.navi:focus {
+  background: var(--accent-color);
+  padding: 0 30px;
+  border:none;
+  border-radius:1000px;
+  font:inherit;
+  font-weight:600;
+  color:var(--background);
+  cursor: pointer;
+}
+
+.navi:hover {
+  background: #3bad32;
+}
+
+.navi:active {
+  background: #3bad32;
+  color: white;
+}
 
